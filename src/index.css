@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+:root {
+    --primary-color: #000000;
+    /* black */
+    --secondary-color: #ff8c00;
+    /* orange */
+    --accent-color: #e4e4e4;
+    /* light grey */
+    --text-color: #ffffff;
+    /* white */
+}
+
+.mono {
+    font-family: "Libertinus Mono", monospace;
+
+}
