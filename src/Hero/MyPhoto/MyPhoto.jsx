@@ -1,22 +1,37 @@
 import React from 'react';
-
+import { motion } from "framer-motion";
+import { BorderBeam } from "@/components/magicui/border-beam";
 const MyPhoto = () => {
     return (
         <div>
-            <div className="relative md:w-[80%]    overflow-hidden">
-                {/* Image */}
-                <img
-                    className="w-full h-auto sm:h-full object-cover border-2"
-                    src="https://i.ibb.co/PZWMxVRd/475664867-629872126390266-6867168703155774116-n-1-Picsart-Ai-Image-Enhancer-removebg-preview.png"
-                    alt="Profile"
+
+            <motion.div
+                initial={{ opacity: 0, x: 200 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: false }}
+
+
+                className="relative inline-block overflow-hidden rounded-full text-white ">
+
+                <BorderBeam
+                    borderWidth={6}
+                    size={300}
+                    colorFrom={'#ff8c00'}
+                    colorTo={'#e4e4e4'}
+                    className="absolute inset-0 rounded-full"
                 />
 
-                {/* Top-left corner border */}
-                <div className="absolute top-0 left-0 w-[30%] h-[15%] sm:w-[40%] sm:h-[20vh] border-t-4 sm:border-t-8 border-l-4 sm:border-l-8 border-[var(--secondary-color)]"></div>
+                <div className="relative z-10 sm:w-full h-full">
+                    <img
+                        className="w-full h-full object-cover rounded-full "
+                        src="https://i.ibb.co/PZWMxVRd/475664867-629872126390266-6867168703155774116-n-1-Picsart-Ai-Image-Enhancer-removebg-preview.png"
+                        alt="Profile"
+                    />
+                </div>
+            </motion.div>
 
-                {/* Bottom-right corner border */}
-                <div className="absolute bottom-0 right-0 w-[30%] h-[15%] sm:w-[40%] sm:h-[20vh] border-b-4 sm:border-b-8 border-r-4 sm:border-r-8 border-[var(--secondary-color)]"></div>
-            </div>
+
         </div>
     );
 };

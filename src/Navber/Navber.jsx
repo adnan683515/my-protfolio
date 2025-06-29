@@ -1,33 +1,49 @@
 import React from 'react';
 
+import Download from '../Icons/Download';
+
+import { ArrowDownToLine } from 'lucide-react';
+
+
+function handleDownload() {
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
 const Navber = () => {
     return (
-        <div className='w-[98%] mx-auto '>
+        <div className='w-[100%]   bg-[var(--secondary-color)]  z-[600] fixed overflow-hidden text-white'>
             <div className="navbar w-full  shadow-sm">
                 <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className=" lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-                        </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>About me</a></li>
-                            <li><a>Contact</a></li>
-                            <li><a>Projects</a></li>
-                        </ul>
+
+                    <h1 className=''>Logo</h1>
+                </div>
+                <div className="navbar-center  lg:flex">
+
+                    <div className='flex gap-1 sm:gap-4 cursor-pointer'>
+                        <h1>About</h1>
+                        <h1>Contact</h1>
+                        <h1>Projects</h1>
                     </div>
-                    <div className=" hidden sm:block text-xl">Logo</div>
+                   
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><a>About me</a></li>
-                        <li><a>Contact</a></li>
-                        <li><a>Projects</a></li>
-                    </ul>
-                </div>
-                <div className="navbar-end">
-                    <button className="bg-[var(--secondary-color)]  px-4 py-2 rounded-sm text-[var(--text-color)]">Resume</button>
+                <div className="navbar-end   ">
+
+                    <ShimmerButton className='p-1 w-[80%] sm:w-[20%] sm:mx-0' shimmerColor={'#ffffff'}>
+                        <button
+                            onClick={handleDownload}
+                            className="bg-[var(--secondary-color)]  relative flex items-center gap-1 text-sm sm:px-4 px-1 sm:py-1 py-1 rounded-sm sm:text-xl text-[var(--text-color)] hover:opacity-90">
+                            Resume
+                            <ArrowDownToLine className="sm:w-5 sm:h-5" />
+                        </button>
+                    </ShimmerButton>
+
                 </div>
             </div>
         </div>
