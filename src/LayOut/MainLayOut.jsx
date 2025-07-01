@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Navber from './../Navber/Navber';
 import HeroLayout from '../Hero/HeroLayout/HeroLayout';
@@ -13,10 +13,14 @@ import ProjectSlider from '../Project/ProjectSlider';
 import Projects2 from './../Project/Projects2';
 import Projects3 from '../Project/Projects3';
 import Contact from '../Contact/Contact';
+import { Authcontext } from '../Context/Provider';
+import Footer from '../Footer/Footer';
 
 
 
 const MainLayOut = () => {
+    const { sectionRef, contact,
+        projects } = useContext(Authcontext)
     return (
         <div className='bg-[var(--primary-color)] relative overflow-hidden min-h-screen  mx-auto' >
             <Navber ></Navber>
@@ -32,7 +36,7 @@ const MainLayOut = () => {
 
 
 
-            <div className='sm:my-10  text-white '>
+            <div ref={sectionRef} className='sm:my-10   text-white '>
                 <h1 className='text-center sm:text-5xl mt-5 mb-3 font-semibold text-white'>About Me</h1>
 
                 <Abouts></Abouts>
@@ -51,7 +55,7 @@ const MainLayOut = () => {
                 <h1 className='text-center sm:text-5xl mt-5  font-semibold text-white'>Basic Skills</h1>
                 <BasicSkills></BasicSkills>
             </div>
-            <div className='sm:py-10'>
+            <div ref={projects} className='sm:py-10'>
                 <h1 className='text-center sm:text-5xl mt-5  font-semibold text-white'>My Projects</h1>
                 <Project></Project>
 
@@ -61,11 +65,15 @@ const MainLayOut = () => {
             </div>
 
 
-            <div className='sm:py-10'>
+            <div ref={contact} className='sm:py-10'>
                 <h1 className='text-center sm:text-5xl mt-5  font-semibold text-white'>Contact Me</h1>
                 <Contact></Contact>
             </div>
 
+
+            {/* <div className='pt-10'>
+                <Footer></Footer>
+            </div> */}
 
 
 

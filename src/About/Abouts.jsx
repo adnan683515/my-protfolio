@@ -1,33 +1,59 @@
-import React from 'react';
+import React  from 'react';
 import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
 import { motion } from "framer-motion";
-const Abouts = () => {
-    return (
-        <div className="flex relative overflow-hidden w-[98%] mx-auto flex-col md:flex-row gap-6 justify-around p-6 text-white bg-black">
+import {
+    AnimatedSpan,
+    Terminal,
+    TypingAnimation,
+} from "@/components/magicui/terminal";
 
-            {/* Left: Education Info */}
+
+const Abouts = () => {
+    
+    
+    return (
+        <div  className="flex    relative overflow-hidden w-[98%] mx-auto flex-col md:flex-row gap-6 justify-around p-6 text-white bg-black">
+
+
+
             <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: false }}
-                className="flex justify-center items-center w-full md:w-1/2">
-                <NeonGradientCard
-                    className="bg-black"
-                    gradient="linear-gradient(135deg, #ff8c00, #e4e4e4, #ffffff)"
-                >
-                    <div className="p-6 h-full bg-black rounded-xl ">
-                        <h2 className="text-2xl font-bold mb-2">🎓 Education</h2>
-                        <p className="mb-1">👋 I am <span className="font-semibold text-orange-400">Addnan</span></p>
-                        <p className="mb-1">📚 Studying at Feni Computer Institute</p>
-                        <p className="mb-1">💻 Diploma in Computer Science</p>
-                        <p className="mb-1">📍 Department: Computer Science</p>
-                    </div>
-                </NeonGradientCard>
+                className="flex justify-center items-center w-full md:w-1/2"
+            >
+                <Terminal className="bg-black text-white p-4 rounded-lg">
+                    <TypingAnimation>
+                        🎓 Education
+
+                    </TypingAnimation>
+                    <TypingAnimation>
+                        👋 I am Addnan
+
+                    </TypingAnimation>
+                    <TypingAnimation>
+                        📚 Studying at Feni Computer Institute
+
+
+                    </TypingAnimation>
+                    <TypingAnimation>
+                        💻 Diploma in Computer Science
+
+
+                    </TypingAnimation>
+                    <TypingAnimation>
+                        📍 Department: Computer Science
+
+                    </TypingAnimation>
+                </Terminal>
+
+
             </motion.div>
 
+
             {/* Right: Skills & Journey */}
-            <motion.div
+            {/* <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
@@ -47,7 +73,44 @@ const Abouts = () => {
                         <p className="mb-1">⏰ I'm a regular coder</p>
                     </div>
                 </NeonGradientCard>
+            </motion.div> */}
+            <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: false }}
+                className="flex justify-center items-center w-full md:w-1/2"
+            >
+                <Terminal className="bg-black text-white p-4 rounded-lg">
+                    <TypingAnimation>
+                        🚀 My Journey
+                    </TypingAnimation>
+                    <TypingAnimation>
+                        🌐 I am creating responsive websites
+                    </TypingAnimation>
+                    <TypingAnimation>
+                        📖 I love self-learning
+                    </TypingAnimation>
+                    <TypingAnimation>
+                        🧩 Recently learning problem solving
+                    </TypingAnimation>
+                    <TypingAnimation>
+                        🧠 Sometimes solving with JavaScript
+                    </TypingAnimation>
+                    <TypingAnimation>
+                        💡 I solve problems on LeetCode
+                    </TypingAnimation>
+                    <TypingAnimation>
+                        ⏰ I'm a regular coder
+                    </TypingAnimation>
+
+
+                </Terminal>
             </motion.div>
+
+
+
+
 
         </div>
     );

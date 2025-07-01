@@ -5,11 +5,14 @@ import './index.css'
 import MainLayOut from './LayOut/MainLayOut.jsx'
 import { RouterProvider } from 'react-router'
 import { router } from './Router/Router.jsx'
+import Provider from './Context/Provider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}>
+    <Provider>
+      <RouterProvider router={router}>
 
-    </RouterProvider>
+      </RouterProvider>
+    </Provider>
   </StrictMode>,
 )

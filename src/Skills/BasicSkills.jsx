@@ -36,7 +36,10 @@ const BasicSkills = () => {
                 ref={toRef}
                 className="z-10 bg-white text-black p-6 rounded-full shadow-xl"
             >
-                <SiLeetcode size={30} className="text-orange-400" />
+
+
+                <a href="https://leetcode.com/u/Golam_Faruk_Adnan/">
+                    <SiLeetcode size={30} className="text-orange-400" /></a>
             </div>
 
             <Meteors number={100}></Meteors>

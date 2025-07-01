@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaGithub  } from 'react-icons/fa';
 import Button from '../../Button/Button';
 import { BoxReveal } from '@/components/magicui/box-reveal';
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
@@ -42,14 +42,14 @@ const HeroTextMagic = () => {
                     <BoxReveal boxColor="white" duration={0.5}>
                         <div className='flex justify-center items-center sm:justify-start'>
                             <div className="flex gap-3 text-2xl">
-                                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#0A66C2] hover:scale-110 transition">
+                                <a href="https://www.linkedin.com/in/golam-faruk-adnan-bb7794352/" target="_blank" rel="noopener noreferrer" className="text-[#0A66C2] hover:scale-110 transition">
                                     <FaLinkedinIn />
                                 </a>
-                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#1877F2] hover:scale-110 transition">
+                                <a href="https://web.facebook.com/golam.faruk.adnan" target="_blank" rel="noopener noreferrer" className="text-[#1877F2] hover:scale-110 transition">
                                     <FaFacebookF />
                                 </a>
-                                <a href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer" className="text-[#25D366] hover:scale-110 transition">
-                                    <FaWhatsapp />
+                                <a href="https://github.com/adnan683515" target="_blank" rel="noopener noreferrer" className="text-[#25D366] hover:scale-110 transition">
+                                    <FaGithub></FaGithub>
                                 </a>
                             </div>
                         </div>

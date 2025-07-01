@@ -6,8 +6,10 @@ import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { Link } from 'react-router';
 import { motion } from "framer-motion";
 const Project = () => {
+
+    
     return (
-        <div className="flex w-[98%] mx-auto flex-col md:flex-row gap-6 justify-around p-6 text-white bg-black">
+        <div  className="flex w-[98%] mx-auto flex-col md:flex-row gap-6 justify-around p-6 text-white bg-black">
 
             {/* Left: Education Info */}
             <motion.div
