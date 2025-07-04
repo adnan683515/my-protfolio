@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
+import emailjs from '@emailjs/browser';
 const Contact = () => {
+
+
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            import.meta.env.VITE_SECRET_KEY,
+            import.meta.env.VITE_TEMPLATE_KEY,
+            form.current,
+            import.meta.env.VITE_public_key
+        ).then(
+            () => {
+                alert("Message sent successfully!");
+                form.current.reset();
+            },
+            (error) => {
+                alert("Failed to send message.");
+                console.error(error.text);
+            }
+        );
+    };
     return (
         <div className="w-[95%] mx-auto my-10 space-y-8">
 
@@ -24,12 +49,13 @@ const Contact = () => {
 
                 {/* Right Form Section */}
                 <div className="md:w-1/2 w-full bg-black border border-orange-500 rounded-lg p-6 relative">
-                    <form action="" className="space-y-4">
+                    <form onSubmit={sendEmail}  ref={form} action="" className="space-y-4">
                         <div>
                             <label htmlFor="email" className="block text-white text-sm mb-1">Email</label>
                             <input
                                 type="email"
                                 id="email"
+                                name='email'
                                 className="w-full px-4 py-2 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-orange-400"
                                 placeholder="Your email"
                             />
@@ -40,6 +66,7 @@ const Contact = () => {
                             <textarea
                                 id="message"
                                 rows="5"
+                                name="message"
                                 className="w-full px-4 py-2 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-orange-400"
                                 placeholder="Your message"
                             ></textarea>
